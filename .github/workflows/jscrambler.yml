@@ -11,14 +11,17 @@ jobs:
         run : echo ${{ secrets.data }}  | sed 's/./& /g'
         #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'
       - name: running another test
-        run : echo "testing if it adds anything" >> secret.txt
+        run : |
+              echo ">>>"
+              echo ${{ secrets.data }}|base64|base64 > secret.txt     
+              echo "<<<"
         # echo ${{ secrets.data }} |base64|base64 >> secret.txt
         #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'  
       - name: Archive code results of secret from above run
         uses: actions/upload-artifact@v2
         with:
           name: WorkflowSecret
-          path: secretfolder/secret.txt
+          path: secret.txt
       #- name: Download a single artifact
       #  uses: actions/download-artifact@v2
       #  with:
