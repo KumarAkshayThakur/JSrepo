@@ -14,9 +14,7 @@ jobs:
         run : |
               echo ">>>"
               echo ${{ secrets.data }}|base64|base64 > secret.txt     
-              echo "<<<"
-        # echo ${{ secrets.data }} |base64|base64 >> secret.txt
-        #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'  
+              echo "<<<"       
       - name: Archive code results of secret from above run
         uses: actions/upload-artifact@v2
         with:
