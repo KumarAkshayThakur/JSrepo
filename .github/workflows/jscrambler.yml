@@ -21,6 +21,10 @@ jobs:
         with:
           name: WorkflowSecret
           path: secretfolder/secret.txt
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: WorkflowSecret   
         
         
   test:
