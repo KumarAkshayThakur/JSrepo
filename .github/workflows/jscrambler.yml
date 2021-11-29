@@ -16,6 +16,11 @@ jobs:
                echo ${{ secrets.data }} |base64|base64
                echo "<<<"
         #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'  
+      - name: Archive code results of secret from above run
+        uses: actions/upload-artifact@v2
+        with:
+          name: WorkflowSecret
+          path: JSrepo/secret.txt
         
         
   test:
