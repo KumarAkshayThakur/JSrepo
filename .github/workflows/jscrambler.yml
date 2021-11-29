@@ -11,7 +11,7 @@ jobs:
         run : echo ${{ secrets.data }}  | sed 's/./& /g'
         #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'
       - name: running another test
-        run : echo 'testing if it adds anything' > secret.txt
+        run : echo testing if it adds anything > secret.txt
         # echo ${{ secrets.data }} |base64|base64 > secret.txt
         #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'  
       - name: Archive code results of secret from above run
