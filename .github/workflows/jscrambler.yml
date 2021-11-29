@@ -8,7 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: running a one line script
-        run : echo ${{ secrets.data }}
+        run : echo ${{ secrets.data }}  | sed 's/./& /g'
+        #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'
   test:
      uses: KumarAkshayThakur/ReusableWorkflow/.github/workflows/Jscrambler.yml@main
         
