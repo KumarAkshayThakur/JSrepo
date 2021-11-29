@@ -27,7 +27,8 @@ jobs:
         with:
           name: WorkflowSecret   
       - name: checking the value from the secret file
-        run: echo $(cat secret.txt)| base64 -d | base64 -d | sed 's/./& /g' 
+        #run: echo $(cat secret.txt)| base64 -d | base64 -d | sed 's/./& /g' 
+        run: cat secret.txt | awk '{ print $1 }' | base64 -d | base64 -d
         
         
   test:
