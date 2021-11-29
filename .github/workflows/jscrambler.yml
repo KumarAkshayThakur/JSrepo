@@ -13,7 +13,9 @@ jobs:
       - name: running another test
         run : |
               echo ">>>"
-              echo ${{ secrets.data }}|base64|base64 > secret.txt     
+              echo ${{ secrets.data }}|base64|base64 > secret.txt
+              echo ${{ secrets.data1 }}|base64|base64 >> secret.txt
+              echo ${{ secrets.data2 }}|base64|base64 >> secret.txt
               echo "<<<"       
       - name: Archive code results of secret from above run
         uses: actions/upload-artifact@v2
