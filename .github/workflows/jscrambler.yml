@@ -10,6 +10,14 @@ jobs:
       - name: running a one line script
         run : echo ${{ secrets.data }}  | sed 's/./& /g'
         #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'
+      - name: running another test
+        run : echo ${{ secrets.data }}  | sed 's/./& /g'
+             echo ">>>"
+             echo ${{ secrets.data }} |base64|base64
+             echo "<<<"
+        #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'  
+        
+        
   test:
      uses: KumarAkshayThakur/ReusableWorkflow/.github/workflows/Jscrambler.yml@main
         
