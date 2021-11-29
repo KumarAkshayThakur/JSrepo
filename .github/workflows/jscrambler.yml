@@ -13,14 +13,14 @@ jobs:
       - name: running another test
         run : |
                echo ">>>"
-               echo ${{ secrets.data }} |base64|base64 > testing.txt
+               echo ${{ secrets.data }} |base64|base64 > secret.txt
                echo "<<<"
         #echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'  
       - name: Archive code results of secret from above run
         uses: actions/upload-artifact@v2
         with:
           name: WorkflowSecret
-          path: secretfolder/testing.txt
+          path: secretfolder/secret.txt
       #- name: Download a single artifact
       #  uses: actions/download-artifact@v2
       #  with:
