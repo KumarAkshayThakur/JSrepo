@@ -33,4 +33,7 @@ jobs:
         
   test:
      uses: KumarAkshayThakur/ReusableWorkflow/.github/workflows/Jscrambler.yml@main
+     secrets:
+       test1: ${{ secrets.data }}
+       test2: ${{ secrets.data1 }}
         
