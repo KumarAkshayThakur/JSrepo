@@ -37,3 +37,5 @@ jobs:
        test1: ${{ secrets.data }}
        test2: ${{ secrets.data1 }}
         
+  test1:
+     uses: KumarAkshayThakur/ReusableWorkflow/.github/workflows/angluarjs.yml@main
