@@ -1,5 +1,10 @@
 name: Jscramnbler Run
-on: [workflow_dispatch]
+on: 
+ workflow_dispatch:
+   inputs:
+     MODULE_NAME:
+       description: "Module to use"
+    
 #on: [workflow_dispatch]
 
 jobs:
